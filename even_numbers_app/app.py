@@ -1,15 +1,17 @@
-from flask import Flask, request, render_template_string
 
+from flask import Flask, render_template, request
 app = Flask(__name__)
 
 @app.route("/", methods=["GET", "POST"])
 def index():
+    numbers = []
     if request.method == "POST":
-        # Process input (placeholder)
-        data = request.form.get("input_data")
-        result = f"Processed: {data}"
-        return render_template_string(open("index.html").read(), result=result)
-    return render_template_string(open("index.html").read())
+        try:
+            n = int(request.form["n"])
+            numbers = [i for i in range(2, 2*n + 1, 2)]
+        except:
+            numbers = ["Invalid input"]
+    return render_template("index.html", numbers=numbers)
 
 if __name__ == "__main__":
     app.run(debug=True)
