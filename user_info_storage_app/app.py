@@ -13,9 +13,9 @@ app.secret_key = secrets.token_hex(16)
 # Database configuration
 DB_CONFIG = {
     'host': 'sql12.freesqldatabase.com',
-    'database': 'sql12781148',
-    'user': 'sql12781148',
-    'password': 'h9iJN2JMRZ',
+    'database': 'sql12782499',
+    'user': 'sql12782499',
+    'password': 'eBtLvErKkK',
     'port': 3306
 }
 
